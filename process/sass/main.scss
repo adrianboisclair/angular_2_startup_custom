@@ -1,0 +1,27 @@
+@import "partials/reset";
+/**
+ * Modules and Variables
+ */
+ //@import 'partials/base';
+/**
+ * Third-party
+ */
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+//@import "partials/variables";
+
+// Reset Styles
+// Set Basic Custom Styles
+//@import "partials/typography";
+//@import "partials/buttons";
+//@import "partials/scaffold";
+
+
+
+/**
+ * Partials
+ */
+@import "partials/header";
+@import "partials/footer";
+
+// @import 'vendor/colorpicker';
+// @import 'vendor/jquery.ui.core';

@@ -1,0 +1,24 @@
+{
+  "name": "Angular2StarterTemplate",
+  "version": "0.0.1",
+  "author": "Adrian Boisclair",
+  "description": "This is a starter project for a generic Angular 2 application",
+  "devDependencies": {
+    "angular2": "2.0.0-beta.2",
+    "bootstrap-sass": "^3.3.7",
+    "es6-promise": "^3.0.2",
+    "es6-shim": "^0.33.3",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.10.0",
+    "gulp-webserver": "^0.9.1",
+    "reflect-metadata": "0.1.2",
+    "rxjs": "5.0.0-beta.0",
+    "systemjs": "0.19.6",
+    "zone.js": "0.5.10"
+  }
+}
