@@ -1,4 +1,4 @@
-System.register(['angular2/core', './hero.component'], function(exports_1, context_1) {
+System.register(['angular2/core', './hero.component', './http-test.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './hero.component'], function(exports_1, conte
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, hero_component_1;
+    var core_1, hero_component_1, http_test_service_1;
     var ContentContainer;
     return {
         setters:[
@@ -19,19 +19,29 @@ System.register(['angular2/core', './hero.component'], function(exports_1, conte
             },
             function (hero_component_1_1) {
                 hero_component_1 = hero_component_1_1;
+            },
+            function (http_test_service_1_1) {
+                http_test_service_1 = http_test_service_1_1;
             }],
         execute: function() {
             ContentContainer = (function () {
-                function ContentContainer() {
+                function ContentContainer(_httpService) {
+                    this._httpService = _httpService;
                 }
+                ContentContainer.prototype.onGetContent = function () {
+                    var _this = this;
+                    this._httpService.getWeather()
+                        .subscribe(function (data) { return _this.contentData = JSON.stringify(data); }, function (error) { return console.log(error); }, function () { return console.log('Completed onGetWeather / getWeather function.'); });
+                };
                 ContentContainer = __decorate([
                     core_1.Component({
                         selector: 'content-container',
                         templateUrl: 'partials/content.html',
                         directives: [hero_component_1.HeroComponent],
-                        styles: ["\n   main { height: 100vh; }\n    "]
+                        providers: [http_test_service_1.HTTPTestService],
+                        styles: ["main { height: 100vh; }"]
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [http_test_service_1.HTTPTestService])
                 ], ContentContainer);
                 return ContentContainer;
             }());

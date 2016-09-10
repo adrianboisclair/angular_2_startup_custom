@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"components/my-app/artist.js","sourcesContent":[],"sourceRoot":"/source/"}
+{"version":3,"sources":["components/my-app/artist.ts"],"names":[],"mappings":"AAAA,2BAA2B;AAC3B,mBAAmB;AACnB,wBAAwB;AACxB,sBAAsB;AACtB,kBAAkB;AAClB,GAAG","file":"components/my-app/artist.js","sourcesContent":["//export interface Artist {\n//    name: string,\n//    shortname: string;\n//    reknown: string;\n//    bio: string;\n//}"],"sourceRoot":"/source/"}

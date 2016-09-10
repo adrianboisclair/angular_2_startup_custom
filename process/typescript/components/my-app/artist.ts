@@ -1,6 +1,6 @@
-export interface Artist {
-    name: string,
-    shortname: string;
-    reknown: string;
-    bio: string;
-}
+//export interface Artist {
+//    name: string,
+//    shortname: string;
+//    reknown: string;
+//    bio: string;
+//}

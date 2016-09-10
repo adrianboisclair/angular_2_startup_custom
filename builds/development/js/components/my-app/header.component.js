@@ -11,7 +11,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var HeaderComponent;
+    var HeaderComponent, BRAND, homeLink, linkOne, linkTwo;
     return {
         setters:[
             function (core_1_1) {
@@ -20,6 +20,10 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             HeaderComponent = (function () {
                 function HeaderComponent() {
+                    this.brand = BRAND;
+                    this.homeLink = homeLink;
+                    this.linkOne = linkOne;
+                    this.linkTwo = linkTwo;
                 }
                 HeaderComponent = __decorate([
                     core_1.Component({
@@ -31,6 +35,27 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                 return HeaderComponent;
             }());
             exports_1("HeaderComponent", HeaderComponent);
+            // Set the Header Brand
+            BRAND = 'Brand';
+            homeLink = {
+                id: 1,
+                name: 'Home',
+                slug: 'home',
+                url: '/'
+            };
+            linkOne = {
+                id: 2,
+                name: 'Link One',
+                slug: 'link-one',
+                url: '/link-one'
+            };
+            linkTwo = {
+                id: 3,
+                name: 'Link Two',
+                slug: 'link-two',
+                url: '/link-two'
+            };
+            console.log({ myObj: [homeLink, linkTwo, linkOne] });
         }
     }
 });

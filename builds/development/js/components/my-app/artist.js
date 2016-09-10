@@ -1,11 +1,8 @@
-System.register([], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
-    return {
-        setters:[],
-        execute: function() {
-        }
-    }
-});
+//export interface Artist {
+//    name: string,
+//    shortname: string;
+//    reknown: string;
+//    bio: string;
+//} 
 
 //# sourceMappingURL=artist.js.map

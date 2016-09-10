@@ -45,6 +45,7 @@ gulp.task('css', function() {
 gulp.task('copylibs', function() {
   return gulp
     .src([
+      'node_modules/angular2/bundles/http.js',
       'node_modules/es6-shim/es6-shim.min.js',
       'node_modules/systemjs/dist/system-polyfills.js',
       'node_modules/angular2/bundles/angular2-polyfills.js',
