@@ -11,6 +11,11 @@ export class HTTPTestService {
         return string;
     }
 
+    getTestApi(str: string) {
+        return this._http.get('/test_api')
+            .map(res => res.json());
+    }
+
     getWeather() {
         var city = 'West Hollywood';
         var country = 'USA';

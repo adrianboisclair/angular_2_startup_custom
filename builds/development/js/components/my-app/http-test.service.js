@@ -30,6 +30,10 @@ System.register(['angular2/core', 'angular2/http', 'rxjs/add/operator/map'], fun
                 HTTPTestService.getContent = function (string) {
                     return string;
                 };
+                HTTPTestService.prototype.getTestApi = function (str) {
+                    return this._http.get('/test_api')
+                        .map(function (res) { return res.json(); });
+                };
                 HTTPTestService.prototype.getWeather = function () {
                     var city = 'West Hollywood';
                     var country = 'USA';

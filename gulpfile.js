@@ -1,4 +1,6 @@
 var gulp = require('gulp'),
+    nodemon = require('gulp-nodemon'),
+    jshint = require('gulp-jshint'),
     webserver = require('gulp-webserver'),
     typescript = require('gulp-typescript'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -13,10 +15,23 @@ var gulp = require('gulp'),
  *
  **/
 var appSrc = 'builds/development/',
+    srvSrc = 'server.js',
     sassSrc = 'process/sass/',
     tsSrc = 'process/typescript/';
 
 var fN = ['process/sass/_scaffold.scss'];
+
+gulp.task('backend', function(){
+    nodemon({   script: srvSrc })
+        .on('restart', function(){
+            console.log('Sever reloaded!');
+        });
+});
+
+gulp.task('lint', function(){
+    gulp.src(srvSrc)
+        .pipe(jshint())
+});
 
 gulp.task('html', function() {
   gulp.src(appSrc + '**/*.html');
@@ -70,6 +85,7 @@ gulp.task('watch', function() {
   gulp.watch(sassSrc + '**/*.scss', ['sass']);
   gulp.watch(appSrc + 'css/*.css', ['css']);
   gulp.watch(appSrc + '**/*.html', ['html']);
+  gulp.watch(srvSrc, ['backend']);
 });
 
 gulp.task('webserver', function() {
@@ -79,5 +95,6 @@ gulp.task('webserver', function() {
       open: true
     }));
 });
+
 
 gulp.task('default', ['copylibs', 'typescript', 'watch', 'webserver']);

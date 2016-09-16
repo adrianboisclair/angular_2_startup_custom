@@ -11,6 +11,8 @@ import {HTTPTestService} from './http-test.service';
     <p>Output: {{postData}}</p>
     <button (click)='onGetWeather()'>Test Get Weather</button><br>
     <p>Output: {{weatherData}}</p>
+    <button (click)='onGetTestApi()'>Test Get Test API</button><br>
+    <p>Output: {{testApi}}</p>
 
     `,
     providers: [HTTPTestService]
@@ -20,8 +22,18 @@ export class HTTPTestComponent {
     getData: string;
     postData: string;
     weatherData: string;
+    testApi: string;
 
     constructor(private _httpService: HTTPTestService) {}
+
+    onGetTestApi() {
+        this._httpService.getTestApi('string')
+            .subscribe(
+                data => this.testApi = JSON.stringify(data),
+                error => console.log(error),
+                () => console.log('Completed test api.')
+            )
+    }
 
     onGetWeather() {
         this._httpService.getWeather()

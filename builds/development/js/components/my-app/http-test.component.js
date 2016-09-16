@@ -25,6 +25,11 @@ System.register(['angular2/core', './http-test.service'], function(exports_1, co
                 function HTTPTestComponent(_httpService) {
                     this._httpService = _httpService;
                 }
+                HTTPTestComponent.prototype.onGetTestApi = function () {
+                    var _this = this;
+                    this._httpService.getTestApi('string')
+                        .subscribe(function (data) { return _this.testApi = JSON.stringify(data); }, function (error) { return console.log(error); }, function () { return console.log('Completed test api.'); });
+                };
                 HTTPTestComponent.prototype.onGetWeather = function () {
                     var _this = this;
                     this._httpService.getWeather()
@@ -43,7 +48,7 @@ System.register(['angular2/core', './http-test.service'], function(exports_1, co
                 HTTPTestComponent = __decorate([
                     core_1.Component({
                         selector: 'http-test',
-                        template: "\n    <button (click)='onTestGet()'>Test Get Req</button><br>\n    <p>Output: {{getData}}</p>\n    <button (click)='onTestPost()'>Test Post Req</button><br>\n    <p>Output: {{postData}}</p>\n    <button (click)='onGetWeather()'>Test Get Weather</button><br>\n    <p>Output: {{weatherData}}</p>\n\n    ",
+                        template: "\n    <button (click)='onTestGet()'>Test Get Req</button><br>\n    <p>Output: {{getData}}</p>\n    <button (click)='onTestPost()'>Test Post Req</button><br>\n    <p>Output: {{postData}}</p>\n    <button (click)='onGetWeather()'>Test Get Weather</button><br>\n    <p>Output: {{weatherData}}</p>\n    <button (click)='onGetTestApi()'>Test Get Test API</button><br>\n    <p>Output: {{testApi}}</p>\n\n    ",
                         providers: [http_test_service_1.HTTPTestService]
                     }), 
                     __metadata('design:paramtypes', [http_test_service_1.HTTPTestService])
